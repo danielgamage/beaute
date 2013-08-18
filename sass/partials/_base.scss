@@ -1,0 +1,28 @@
+// This file must be imported before loading html5-boilerplate
+
+// base
+$base-font-family: unquote("sans-serif");
+$base-font-size: 13px;
+$base-line-height: 1.231;
+$font-color: #222;
+
+// Links
+$link-color: inherit;
+$link-visited-color: #551a8b;
+$link-hover-color: #06e;
+
+// Lists
+$list-left-margin: 40px;
+
+// Transitions
+
+$timing: 0.15s;
+
+$transitions:
+	color $timing ease,
+	box-shadow $timing ease,
+	background $timing ease,
+	opacity $timing ease,
+	height $timing ease,
+	-webkit-transform $timing ease,	
+	text-shadow $timing ease;
