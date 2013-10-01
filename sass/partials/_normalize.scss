@@ -209,6 +209,9 @@ mark {
 p,
 pre {
     margin: 1em 0;
+    &:first-of-type{
+        margin-top: 0;
+    }
 }
 
 /**
@@ -524,4 +527,9 @@ textarea {
 table {
     border-collapse: collapse;
     border-spacing: 0;
+}
+
+
+p:last-child{
+    margin-bottom: 0;
 }

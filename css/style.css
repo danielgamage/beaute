@@ -1,38 +1,4 @@
-/* normalize.css v1.1.0 | MIT License | git.io/normalize */
-/* ==========================================================================
-   from HTML5BP
-   ========================================================================== */
-/*
- * A better looking default horizontal rule
- */
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0; }
-
-/*
- * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
- */
-img {
-  vertical-align: middle; }
-
-/*
- * Remove default fieldset styles.
- */
-fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0; }
-
-/*
- * Allow only vertical resizing of textareas.
- */
-textarea {
-  resize: vertical; }
-
+/*! normalize.css v1.1.2 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
    ========================================================================== */
@@ -90,9 +56,9 @@ audio:not([controls]) {
 html {
   font-size: 100%;
   /* 1 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
   -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
   /* 2 */ }
 
 /**
@@ -204,6 +170,9 @@ mark {
 p,
 pre {
   margin: 1em 0; }
+  p:first-of-type,
+  pre:first-of-type {
+    margin-top: 0; }
 
 /**
  * Correct font family set oddly in IE 6, Safari 4/5, and Chrome.
@@ -480,6 +449,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+p:last-child {
+  margin-bottom: 0; }
+
 body, select, input, textarea {
   color: #222222; }
 
@@ -495,8 +467,13 @@ body {
   overflow-x: hidden; }
 
 body {
-  font-size: 1em;
+  font-size: 1.2em;
+  font-family: "p22-underground",sans-serif;
+  font-style: normal;
+  font-weight: 400;
   line-height: 1.4;
+  color: #555555;
+  background-color: #eeeeee;
   -webkit-text-rendering: optimizeLegibility;
   -moz-text-rendering: optimizeLegibility;
   -ms-text-rendering: optimizeLegibility;
@@ -523,6 +500,142 @@ body {
   -webkit-transition: color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, opacity 0.15s ease, height 0.15s ease, -webkit-transform 0.15s ease, text-shadow 0.15s ease;
   -ms-transition: color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, opacity 0.15s ease, height 0.15s ease, -webkit-transform 0.15s ease, text-shadow 0.15s ease;
   transition: color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, opacity 0.15s ease, height 0.15s ease, -webkit-transform 0.15s ease, text-shadow 0.15s ease; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1;
+  margin: 0; }
+
+header h1,
+header h2,
+header h3,
+header h4,
+header h5,
+header h6 {
+  white-space: nowrap;
+  margin-left: -20%;
+  text-transform: uppercase; }
+  header h1:nth-child(4n),
+  header h2:nth-child(4n),
+  header h3:nth-child(4n),
+  header h4:nth-child(4n),
+  header h5:nth-child(4n),
+  header h6:nth-child(4n) {
+    background-color: #555555;
+    color: #eeeeee;
+    padding: 0.4em 0 0.2em;
+    margin: 0 0 0.4em; }
+  header h1 em,
+  header h2 em,
+  header h3 em,
+  header h4 em,
+  header h5 em,
+  header h6 em {
+    color: #87d3e5;
+    font-style: normal; }
+
+h1 {
+  font-size: 16rem;
+  font-size: 16vw;
+  font-weight: 300;
+  margin-bottom: -0.1em; }
+
+h2 {
+  font-size: 8rem;
+  font-size: 8vw;
+  font-weight: 500; }
+  h2 .key {
+    color: #ef4a70; }
+
+h3 {
+  font-size: 4rem;
+  font-size: 4vw;
+  font-weight: 700;
+  letter-spacing: 0.05em; }
+
+header {
+  padding: 1rem 0 1rem; }
+
+section {
+  padding: 2rem; }
+
+article {
+  padding: 0 2rem 4rem; }
+  article h2 {
+    float: left;
+    padding: 0.5em 0.6em 0.3em;
+    background-color: #ef4a70;
+    color: #eeeeee;
+    margin: 0 2rem 1rem 0; }
+  article footer .count {
+    font-size: 1.2em;
+    font-family: "futura-pt-condensed", sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    background-color: #87d3e5;
+    color: #eeeeee;
+    padding: 0.5em 1em 0.5em 0.7em; }
+
+blockquote {
+  float: right;
+  margin: 2rem 0;
+  color: #6e6e6e;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 4rem;
+  font-size: 4vw;
+  line-height: 1.3; }
+
+a {
+  color: #469bb1;
+  text-decoration: none; }
+  a:hover, a:focus {
+    text-decoration: underline; }
+
+.break {
+  background-color: #87d3e5;
+  color: #eeeeee;
+  font-size: 10rem;
+  font-size: 10vw;
+  font-weight: lighter;
+  text-align: center;
+  padding: 4rem 4rem 8rem;
+  position: relative; }
+  .break aside {
+    text-transform: uppercase;
+    background-color: #eeeeee;
+    color: #87d3e5;
+    font-family: "futura-pt-condensed", sans-serif;
+    font-weight: 500;
+    position: absolute;
+    bottom: 0;
+    right: 3rem; }
+
+aside {
+  padding: 0.5rem 1rem;
+  font-size: 4rem;
+  line-height: 1;
+  font-family: "futura-pt-condensed", sans-serif;
+  font-weight: 500; }
+  aside.inline {
+    padding: 1.7rem 2rem; }
+    aside.inline:nth-of-type(3n-2) {
+      background-color: #ef4a70;
+      color: #eeeeee;
+      float: left;
+      margin: 2rem;
+      max-width: 33%; }
+    aside.inline:nth-of-type(3n-1) {
+      background-color: #469bb1;
+      color: #eeeeee;
+      float: right;
+      margin: 2rem;
+      max-width: 33%;
+      clear: left; }
 
 @media only screen and (min-width: 480px) {
   /* Style adjustments for viewports 480px and over go here */ }

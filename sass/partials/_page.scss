@@ -26,8 +26,13 @@ body {
 }
 
 body {
-    font-size: 1em;
+    font-size: 1.2em;
+    font-family: "p22-underground",sans-serif;
+    font-style: normal;
+    font-weight: 400;
     line-height: 1.4;
+    color: $gray;
+    background-color: $white;
     -webkit-text-rendering: optimizeLegibility;
     -moz-text-rendering: optimizeLegibility;
     -ms-text-rendering: optimizeLegibility;
@@ -65,7 +70,156 @@ body {}
 
 #container {}
 
-header {}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    line-height: 1;
+    margin: 0;
+}
+
+header{
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6{
+        white-space: nowrap;
+        margin-left: -20%;
+        text-transform: uppercase;
+        &:nth-child(4n){
+            background-color: $gray;
+            color: $white;
+            padding: 0.4em 0 0.2em;
+            margin: 0 0 0.4em;
+        }
+        em{
+            color: $blue-med;
+            font-style: normal;
+        }
+    }
+}
+h1{
+    font-size: 16rem;
+    font-size: 16vw;
+    font-weight: 300;
+    margin-bottom: -0.1em;
+}
+h2{
+    font-size: 8rem;
+    font-size: 8vw;
+    font-weight: 500;
+    .key{
+        color: $red;
+        // font-style: italic;
+    }
+}
+h3{
+    font-size: 4rem;
+    font-size: 4vw;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+header {
+    padding: 1rem 0 1rem;
+}
+
+section{
+    padding: 2rem;
+}
+
+article{
+    padding: 0 2rem 4rem;
+    h2{
+        float: left;
+        padding: 0.5em 0.6em 0.3em;
+        background-color: $red;
+        color: $white;
+        margin: 0 2rem 1rem 0;
+    }
+    footer{
+        .count{
+            font-size: 1.2em;
+            font-family: "futura-pt-condensed", sans-serif;
+            text-transform: uppercase;
+            font-weight: 400;
+            background-color: $blue-med;
+            color: $white;
+            padding: 0.5em 1em 0.5em 0.7em; 
+        }
+    }
+}
+
+blockquote{
+    float: right;
+    margin: 2rem 0;
+    color: lighten($gray, 10%);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 4rem;
+    font-size: 4vw;
+    line-height: 1.3;
+}
+
+a{
+    color: $blue-dark;
+    text-decoration: none;
+    &:hover,
+    &:focus{
+        text-decoration: underline;
+    }
+}
+
+.break{
+    background-color: $blue-med;
+    color: $white;
+    font-size: 10rem;
+    font-size: 10vw;
+    font-weight: lighter;
+    text-align: center;
+    padding: 4rem 4rem 8rem;
+    position: relative;
+    aside{
+        text-transform: uppercase;
+        background-color: $white;
+        color: $blue-med;
+        font-family: "futura-pt-condensed", sans-serif;
+        font-weight: 500;
+        position: absolute;
+        bottom: 0;
+        right: 3rem;
+    } 
+}
+
+aside{
+    padding: 0.5rem 1rem;
+    font-size: 4rem;
+    line-height: 1;
+    font-family: "futura-pt-condensed", sans-serif;
+    font-weight: 500;
+    &.inline{
+        padding: 1.7rem 2rem;
+        &:nth-of-type(3n-2){
+            background-color: $red;
+            color: $white;
+            float: left;
+            margin: 2rem;
+            max-width: 33%;
+        }
+        &:nth-of-type(3n-1){
+            background-color: $blue-dark;
+            color: $white;
+            float: right;
+            margin: 2rem;
+            max-width: 33%;
+            clear: left;
+        }
+    }
+}
 
 #main {}
 
