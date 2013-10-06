@@ -154,15 +154,59 @@ article{
     }
 }
 
-blockquote{
-    float: right;
+figure{
     margin: 2rem 0;
+    position: relative;
+    display: flex;
+    width: 200%;
+    transition: margin-left 0.2s ease 0.5s;
+    blockquote{
+        transition: opacity 0.2s ease 0.5s;
+    }
+    blockquote[lang=en]{
+        opacity: 0;
+    }
+    blockquote:not([lang=en]){
+        opacity: 1;
+    }
+    &:hover{
+        margin-left: -100%;
+        blockquote[lang=en]{
+            opacity: 1;
+        }
+        blockquote:not([lang=en]){
+            opacity: 0;
+        }
+    }
+}
+
+blockquote{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
     color: lighten($gray, 10%);
     font-style: italic;
     font-weight: 300;
-    font-size: 4rem;
-    font-size: 4vw;
+    font-size: 2rem;
     line-height: 1.3;
+    width: 50%;
+    margin: 0;
+    padding: 0 2rem;
+    footer{
+        color: lighten($gray, 50%);
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1rem;
+        text-align: right;
+        align-self: bottom;
+        margin-top: 1rem;
+    }
+    &[lang=en]{
+        color: lighten($gray, 30%);
+    }
+    &:not([lang=en]){
+        color: $red;
+    }
 }
 
 a{
@@ -220,6 +264,7 @@ aside{
         }
     }
 }
+
 
 #main {}
 

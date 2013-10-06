@@ -580,15 +580,49 @@ article {
     color: #eeeeee;
     padding: 0.5em 1em 0.5em 0.7em; }
 
-blockquote {
-  float: right;
+figure {
   margin: 2rem 0;
+  position: relative;
+  display: flex;
+  width: 200%;
+  transition: margin-left 0.2s ease 0.5s; }
+  figure blockquote {
+    transition: opacity 0.2s ease 0.5s; }
+  figure blockquote[lang=en] {
+    opacity: 0; }
+  figure blockquote:not([lang=en]) {
+    opacity: 1; }
+  figure:hover {
+    margin-left: -100%; }
+    figure:hover blockquote[lang=en] {
+      opacity: 1; }
+    figure:hover blockquote:not([lang=en]) {
+      opacity: 0; }
+
+blockquote {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
   color: #6e6e6e;
   font-style: italic;
   font-weight: 300;
-  font-size: 4rem;
-  font-size: 4vw;
-  line-height: 1.3; }
+  font-size: 2rem;
+  line-height: 1.3;
+  width: 50%;
+  margin: 0;
+  padding: 0 2rem; }
+  blockquote footer {
+    color: #d4d4d4;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1rem;
+    text-align: right;
+    align-self: bottom;
+    margin-top: 1rem; }
+  blockquote[lang=en] {
+    color: #a2a2a2; }
+  blockquote:not([lang=en]) {
+    color: #ef4a70; }
 
 a {
   color: #469bb1;
