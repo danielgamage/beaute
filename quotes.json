@@ -1,8 +1,4 @@
-var source      = $("#quote-template");
-var source_data = source.html();
-var template    = Handlebars.compile(source_data);
-
-var context = {
+{
 	quotes: [
 		{
 			author: 'Brittany Pietrzykowski',
@@ -29,20 +25,4 @@ var context = {
 			}
 		}
 	]
-};
-
-var html    = template(context);
-
-source.parent().html(html);
-
-$( "body" ).mousemove(function( event ) {
-	var mX = event.pageX;
-		mY = event.pageY;
-	$( "h1" ).css("margin-left", (mX/-3.4));
-	$( "h2" ).css("margin-left", (mX/-2.1));
-	$( "h3" ).css("margin-left", (mX/-1.1));
-});
-
-$(".quote").click(function(){
-	$(this).toggleClass("translated");
-});
+}

@@ -27,6 +27,21 @@ $list-left-margin: 40px;
 
 $timing: 0.15s;
 
+@mixin media($breakpoint) {
+  @if $breakpoint == sm {
+    @media (min-width: 36em)  { @content; }
+  }
+  @else if $breakpoint == med {
+    @media (min-width: 50em) { @content; }
+  }
+  @else if $breakpoint == large {
+    @media (min-width: 80em) { @content; }
+  }
+  @else if $breakpoint == huge {
+    @media (min-width: 100em) { @content; }
+  }
+}
+
 $transitions:
 	color $timing ease,
 	box-shadow $timing ease,

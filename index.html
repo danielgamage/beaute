@@ -23,7 +23,7 @@
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
-        <header>
+        <header id="mouse">
             <h1>la beauté, c'est le point de vue qui est le plus clair</h1>
             <h2>au sujet de la <span class="key">beauté</span>, que savons-nous? pas assez qu'il faut en avoir pour vraiment être content.</h2> 
             <h1>on pense souvent aux autres quand on pense à la beauté</h1>
@@ -31,48 +31,27 @@
             <h2>Ce n'est jamais une idée absolut ni une idée objectif. la beauté est qqch de relatif.</h2>
             <h1>quand je me repose dans mon lit j'imagine les maisons qui concrétise la beauté.
         </header>
-        <figure class="quote">
-            <blockquote lang="es">
-                La belleza no es solo la apariencia física, sino también nuestros sentimientos y virtudes como persona.
-                <footer>
-                    Brittany Pietrzykowski
-                </footer>
-            </blockquote>
-            <blockquote lang="en">
-                Beauty is not only physical appearance, but also our feelings and virtues as a person.
-                <footer>
-                    Brittany Pietrzykowski
-                </footer>
-            </blockquote>
-        </figure>
-        <figure class="quote">
-            <blockquote lang="zh">
-                像是落红千秋载，飞沙一瞬间。只消她回眸轻巧扬起嘴角，便不负了佛前乞求的五百年。
-                <footer>
-                    Roxanne Zhang
-                </footer>
-            </blockquote>
-            <blockquote lang="en">
-                It's a strike in one moment which lasts for thousands of years. When she turns around and smiles at you, it's worth every second you pray before Buddha.
-                <footer>
-                    Roxanne Zhang
-                </footer>
-            </blockquote>
-        </figure>
-        <figure class="quote">
-            <blockquote lang="ja">
-                美しさっていうのは、普通のものなかで珍しい事を見付けてくるの。
-                <footer>
-                    Samantha Renner
-                </footer>
-            </blockquote>
-            <blockquote lang="en">
-                Beauty is the discovery of rarity in the ordinary.
-                <footer>
-                    Samantha Renner
-                </footer>
-            </blockquote>
-        </figure>
+
+        <section id="content">
+            <script id="quote-template" type="text/x-handlebars-template">
+                <ul class="quotes">
+                    {{#each quotes}}
+                        <li class="quote">
+                            <blockquote lang="es">
+                                {{content.original}}
+                                <footer>
+                                    {{author}}
+                                </footer>
+                            </blockquote>
+                            <blockquote lang="en">
+                                {{content.translated}}
+                            </blockquote>
+                        </li>
+                    {{/each}}
+                </ul>
+            </script>
+        </section>
+
         <section class="break">
             Allons-y, Alonzo.
             <aside>
@@ -81,7 +60,8 @@
         </section>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script> 
+        <script src="js/handlebars.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 
