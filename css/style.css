@@ -588,7 +588,7 @@ article {
 
 .quote {
   cursor: pointer;
-  margin: 2rem auto;
+  margin: 4rem auto;
   max-width: 48rem;
   position: relative;
   transition: height 0.2s ease; }
@@ -655,7 +655,7 @@ blockquote {
     font-style: normal;
     font-size: 1rem;
     text-align: right;
-    margin-top: 1rem; }
+    margin-top: 0.6rem; }
     blockquote footer:before {
       content: "—";
       display: inline-block; }
