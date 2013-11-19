@@ -25,8 +25,15 @@ body {
     overflow-x: hidden;
 }
 
+html{
+    font-size: 0.8em;
+    @include breakpoint($med){
+        font-size: 1em;
+    }
+}
+
 body {
-    font-size: 1.2em;
+    font-size: 1em;
     font-family: "proxima-nova",sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -104,13 +111,13 @@ header{
     }
 }
 h1{
-    font-size: ms(5);
+    font-size: ms(6);
     font-weight: 300;
+    letter-spacing: -0.05em;
     margin-bottom: -0.1em;
 }
 h2{
-    font-size: 8rem;
-    font-size: 8vw;
+    font-size: ms(4);
     font-weight: 500;
     .key{
         color: $red;
@@ -118,16 +125,9 @@ h2{
     }
 }
 h3{
-    font-size: 4rem;
-    font-size: 4vw;
+    font-size: ms(2);
     font-weight: 700;
     letter-spacing: 0.05em;
-}
-
-section{
-    @include media(med){
-        padding: 2rem;
-    }
 }
 
 article{
@@ -159,8 +159,8 @@ article{
 
 .quote{
     cursor: pointer;
-    margin: 4rem auto;
-    max-width: 48rem;
+    margin: ms(3) auto;
+    max-width: ms(10);
     position: relative;
     transition: height 0.2s ease;
     blockquote:not([lang=en]){
@@ -170,7 +170,7 @@ article{
         &:before{
             content: '\0201C';
             position: absolute;
-            font-size: 4em;
+            font-size: ms(5);
             line-height: 1;
             font-weight: 100;
             font-family: "p22-underground", sans-serif;
@@ -182,7 +182,8 @@ article{
         }
         &:after{
             content: "\FE40";
-            font-size: 2rem;
+            font-size: ms(2);
+            font-weight: 100;
             display: block;
             position: absolute;
             bottom: 0;
@@ -233,7 +234,7 @@ blockquote{
     color: lighten($gray, 10%);
     font-style: italic;
     font-weight: 300;
-    font-size: 2rem;
+    font-size: ms(2);
     line-height: 1.3;
     margin: 0;
     width: 100%;
@@ -243,9 +244,9 @@ blockquote{
         color: lighten($gray, 50%);
         font-weight: 400;
         font-style: normal;
-        font-size: 1rem;
+        font-size: ms(0.5);
         text-align: right;
-        margin-top: 0.6rem;
+        margin-top: ms(0.5);
         &:before{
             content: "—";
             display: inline-block;
@@ -271,11 +272,10 @@ a{
 .break{
     background-color: $blue-med;
     color: $white;
-    font-size: 8rem;
-    font-size: 10vw;
+    font-size: ms(4);
     font-weight: lighter;
     text-align: center;
-    padding: 4rem 4rem 6rem;
+    padding: ms(3) ms(3) ms(4);
     position: relative;
     aside{
         text-transform: uppercase;
