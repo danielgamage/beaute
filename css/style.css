@@ -469,7 +469,7 @@ body {
 
 body {
   font-size: 1.2em;
-  font-family: "p22-underground",sans-serif;
+  font-family: "proxima-nova",sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.4;
@@ -512,7 +512,8 @@ h6 {
   margin: 0; }
 
 header {
-  margin-left: -50%; }
+  margin-left: -50%;
+  font-family: "p22-underground",sans-serif; }
   header h1,
   header h2,
   header h3,
@@ -520,8 +521,7 @@ header {
   header h5,
   header h6 {
     white-space: nowrap;
-    text-transform: uppercase;
-    overflow: visible; }
+    text-transform: uppercase; }
     header h1:nth-child(4n),
     header h2:nth-child(4n),
     header h3:nth-child(4n),
@@ -588,13 +588,26 @@ article {
 
 .quote {
   cursor: pointer;
-  margin: 2rem 0;
+  margin: 2rem auto;
+  max-width: 48rem;
   position: relative;
   transition: height 0.2s ease; }
   .quote blockquote:not([lang=en]) {
     opacity: 1;
     margin-left: 0;
     padding-bottom: 4rem; }
+    .quote blockquote:not([lang=en]):before {
+      content: '\0201C';
+      position: absolute;
+      font-size: 4em;
+      line-height: 1;
+      font-weight: 100;
+      font-family: "p22-underground", sans-serif;
+      padding: 1rem;
+      top: 0;
+      left: -6rem;
+      opacity: 0;
+      transition: opacity 0.15s 0.2s, left 0.15s 0.2s; }
     .quote blockquote:not([lang=en]):after {
       content: "\FE40";
       font-size: 2rem;
@@ -605,12 +618,14 @@ article {
       text-align: center;
       width: 2em;
       margin-left: -1em;
-      opacity: 0.2;
+      opacity: 0;
       font-style: normal;
       transition: -webkit-transform 0.2s ease, opacity 0.2s ease;
       transition: transform 0.2s ease, opacity 0.2s ease; }
-  .quote:hover blockquote:not([lang=en]):after {
+  .quote:hover blockquote:not([lang=en]):before, .quote:hover blockquote:not([lang=en]):after {
     opacity: 1; }
+  .quote:hover blockquote:not([lang=en]):before {
+    left: -5rem; }
   .quote blockquote[lang=en] {
     opacity: 0;
     margin-top: -4rem;
@@ -658,43 +673,28 @@ a {
 .break {
   background-color: #87d3e5;
   color: #eeeeee;
-  font-size: 10rem;
+  font-size: 8rem;
   font-size: 10vw;
   font-weight: lighter;
   text-align: center;
-  padding: 4rem 4rem 8rem;
+  padding: 4rem 4rem 6rem;
   position: relative; }
   .break aside {
     text-transform: uppercase;
     background-color: #eeeeee;
     color: #87d3e5;
-    font-family: "futura-pt-condensed", sans-serif;
-    font-weight: 500;
+    font-size: 4rem;
+    font-size: 4vw;
+    font-family: "p22-underground", sans-serif;
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: 0.05em;
     position: absolute;
+    padding: 0.8rem 1.2rem 0.3rem;
     bottom: 0;
-    right: 3rem; }
-
-aside {
-  padding: 0.5rem 1rem;
-  font-size: 4rem;
-  line-height: 1;
-  font-family: "futura-pt-condensed", sans-serif;
-  font-weight: 500; }
-  aside.inline {
-    padding: 1.7rem 2rem; }
-    aside.inline:nth-of-type(3n-2) {
-      background-color: #ef4a70;
-      color: #eeeeee;
-      float: left;
-      margin: 2rem;
-      max-width: 33%; }
-    aside.inline:nth-of-type(3n-1) {
-      background-color: #469bb1;
-      color: #eeeeee;
-      float: right;
-      margin: 2rem;
-      max-width: 33%;
-      clear: left; }
+    right: 3rem;
+    -webkit-transform: scaleX(0.8);
+    transform: scaleX(0.8); }
 
 @media only screen and (min-width: 480px) {
   /* Style adjustments for viewports 480px and over go here */ }
@@ -703,3 +703,5 @@ aside {
 @media print {
   a[href]:after {
     content: " [" attr(href) "]"; } }
+
+/*# sourceMappingURL=style.css.map */

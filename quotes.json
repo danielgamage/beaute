@@ -1,28 +1,50 @@
 {
-	quotes: [
-		{
-			author: 'Brittany Pietrzykowski',
-			lang: 'es',
-			content: {
-				original: 'La belleza no es solo la apariencia física, sino también nuestros sentimientos y virtudes como persona.',
-				translated: 'Beauty is not only physical appearance, but also our feelings and virtues as a person.',
-			}
-		},
-		{
-			author: 'Roxanne Zhang',
-			lang: 'zh',
-			content: {
-				original: '像是落红千秋载，飞沙一瞬间。只消她回眸轻巧扬起嘴角，便不负了佛前乞求的五百年。',
-				translated: 'It\'s a strike in one moment which lasts for thousands of years. When she turns around and smiles at you, it\'s worth every second you pray before Buddha.',
-			}
-		},
-		{
-			author: 'Samantha Renner',
-			lang: 'ja',
-			content: {
-				original: '美しさっていうのは、普通のものなかで珍しい事を見付けてくるの。',
-				translated: 'Beauty is the discovery of rarity in the ordinary.'
-			}
+	"quotes": [{
+		"author": "Brittany Pietrzykowski",
+		"lang": "es",
+		"content": {
+			"original": "La belleza no es solo la apariencia física, sino también nuestros sentimientos y virtudes como persona.",
+			"translated": "Beauty is not only physical appearance, but also our feelings and virtues as a person."
 		}
-	]
+	},
+	{
+		"author": "Roxanne Zhang",
+		"lang": "zh",
+		"content": {
+			"original": "像是落红千秋载，飞沙一瞬间。只消她回眸轻巧扬起嘴角，便不负了佛前乞求的五百年。",
+			"translated": "It's a strike in one moment which lasts for thousands of years. When she turns around and smiles at you, it's worth every second you pray before Buddha."
+		}
+	},
+	{
+		"author": "Samantha Renner",
+		"lang": "ja",
+		"content": {
+			"original": "美しさっていうのは、普通のものなかで珍しい事を見付けてくるの。",
+			"translated": "Beauty is the discovery of rarity in the ordinary."
+		}
+	},
+	{
+		"author": "Julia Walsche",
+		"lang": "fr",
+		"content": {
+			"original": "La beauté n'est pas seulement extérieure mais aussi intérieure. Elle représente une chose agréable mais elle est strictement personnelle. La perception de beauté varie d'une personne à l'autre",
+			"translated": "Beauty is not only the outer but the inner as well. It represents something pleasant but it's absolutely personal. Perceptions of beauty vary greatly from one person to another."
+		}
+	},
+	{
+		"author": "Anna Hoyt",
+		"lang": "it",
+		"content": {
+			"original": "La bellezza è ovunque. Nella natura, nel amore, nella felicità, ed anche nella tristezza. È un sorriso, una lacrima, una danza. La bellezza è qualcosa che colpisce tutte le tue emozioni e ti fa perdere il tuo respiro. Bellezza è la natura umana.",
+			"translated": "Beauty is everywhere. In nature, in love, in happiness, and even in sadness. It's a smile, a tear, a dance. Beauty is something that affects all your emotions and makes you lose your breath. Beauty is human nature."
+		}
+	},
+	{
+		"author": "Athena Patras",
+		"lang": "se",
+		"content": {
+			"original": "Skönhetens innebörd borde egentligen beskriva inre drag istället för yttre hos en levande varelse.",
+			"translated": "The meaning of beauty should really describe the internal traits of a living being rather than the outside ones."
+		}
+	}]
 }
