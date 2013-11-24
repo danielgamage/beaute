@@ -26,7 +26,7 @@ body {
 }
 
 html{
-    font-size: 0.8em;
+    font-size: 0.6em;
     @include breakpoint($med){
         font-size: 1em;
     }
@@ -104,10 +104,6 @@ header{
             padding: 0.4em 0 0.2em;
             margin: 0 0 0.4em;
         }
-        em{
-            color: $blue-med;
-            font-style: normal;
-        }
     }
 }
 h1{
@@ -115,19 +111,24 @@ h1{
     font-weight: 300;
     letter-spacing: -0.05em;
     margin-bottom: -0.1em;
+    &.ja{
+        font-size: ms(5);
+    }
 }
 h2{
     font-size: ms(4);
     font-weight: 500;
     .key{
         color: $red;
-        // font-style: italic;
     }
 }
 h3{
     font-size: ms(2);
     font-weight: 700;
     letter-spacing: 0.05em;
+    .key{
+        color: $blue-med;
+    }
 }
 
 article{
@@ -233,7 +234,7 @@ blockquote{
     position: relative;
     color: lighten($gray, 10%);
     font-style: italic;
-    font-weight: 300;
+    font-weight: 400;
     font-size: ms(2);
     line-height: 1.3;
     margin: 0;
@@ -247,6 +248,9 @@ blockquote{
         font-size: ms(0.5);
         text-align: right;
         margin-top: ms(0.5);
+        @include breakpoint($med){
+            font-size: 1rem;
+        }
         &:before{
             content: "—";
             display: inline-block;
