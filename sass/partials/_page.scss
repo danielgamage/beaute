@@ -28,7 +28,7 @@ body {
 html{
     font-size: 0.6em;
     @include breakpoint($med){
-        font-size: 1em;
+        font-size: 1.1em;
     }
 }
 
@@ -152,34 +152,49 @@ article{
         }
     }
 }
+
 .quotes{
     list-style: none;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
+    max-width: ms(10);
+    background-color: $white;
 }
 
 .quote{
     cursor: pointer;
-    margin: ms(3) auto;
-    max-width: ms(10);
+    margin: 0 auto;
+    max-width: ms(9);
+    padding: 2rem;
     position: relative;
-    transition: height 0.2s ease;
+    transition: height $timing $func;
+    &:first-child:before{
+        content: none;
+    }
+    &:before{
+        content: "";
+        display: block;
+        border-top: 1px solid #bbb;
+        position: relative;
+        top: -2rem;
+    }
     blockquote:not([lang=en]){
         opacity: 1;
         margin-left: 0;
-        padding-bottom: 4rem;
         &:before{
-            content: '\0201C';
+            content: attr(lang);
             position: absolute;
-            font-size: ms(5);
-            line-height: 1;
-            font-weight: 100;
+            font-size: ms(1);
+            font-weight: 600;
+            font-style: normal;
+            text-transform: uppercase;
             font-family: "p22-underground", sans-serif;
-            padding: 1rem; // rendering correction
+            padding: 0.2rem ms(2) 0 0;
+            color: $gray-light;
             top: 0;
-            left: -6rem;
-            opacity: 0;
-            transition: opacity $timing 0.2s, left $timing 0.2s;
+            right: 100%;
+            text-shadow: 0 0 3rem $white;
+            transition: color $timing $func, text-shadow $timing $func;
         }
         &:after{
             content: "\FE40";
@@ -194,62 +209,50 @@ article{
             margin-left: -1em;
             opacity: 0;
             font-style: normal;
-            transition: -webkit-transform 0.2s ease, opacity 0.2s ease;
-            transition: transform 0.2s ease, opacity 0.2s ease;
+            transition: -webkit-transform $timing $func, opacity $timing $func;
+            transition: transform $timing $func, opacity $timing $func;
         }
     }
-    &:hover{
-        blockquote:not([lang=en]){
-            &:before,
-            &:after{
-                opacity: 1;
-            }
-            &:before{
-                left: -5rem;
-            }
+    &.default{
+        blockquote[lang=en]{
+            opacity: 0 !important;
         }
     }
-    blockquote[lang=en]{
-        opacity: 0;
-        margin-top: -4rem;
-        height: 0;
-    }
-
     &.translated{
         blockquote:not([lang=en]){
+            margin-bottom: 1rem;
+            &:before{
+                color: $blue-med;
+                text-shadow: 0 0 3rem $blue-light;
+            }
             &:after{
                 -webkit-transform: scaleY(-1) translateY(0.5em);
                 transform: scaleY(-1) translateY(0.5em);
             }
         }
         blockquote[lang=en]{
-            opacity: 1;
-            margin-top: 0;
-            height: auto;
+            opacity: 1 !important;
         }
     }
 }
 
 blockquote{
     position: relative;
-    color: lighten($gray, 10%);
+    color: $gray-light;
     font-style: italic;
     font-weight: 400;
-    font-size: ms(2);
+    font-size: ms(1);
     line-height: 1.3;
     margin: 0;
-    width: 100%;
-    padding: 1rem 2rem;
-    transition: margin 0.2s ease, opacity 0.2s ease;
     footer{
-        color: lighten($gray, 50%);
-        font-weight: 400;
+        color: $gray-light;
+        font-weight: 600;
         font-style: normal;
         font-size: ms(0.5);
         text-align: right;
         margin-top: ms(0.5);
         @include breakpoint($med){
-            font-size: 1rem;
+            font-size: ms(-0.5);
         }
         &:before{
             content: "—";
@@ -257,10 +260,16 @@ blockquote{
         }
     }
     &[lang=en]{
-        color: lighten($gray, 30%);
+        color: lighten($gray, 20%);
+        font-style: normal;
+        font-size: 1rem;
+        line-height: 1.8;
+        width: 100% !important;
+        transition: opacity $timing $func;
     }
     &:not([lang=en]){
         color: $red;
+        transition: margin $timing $func;
     }
 }
 
@@ -274,8 +283,8 @@ a{
 }
 
 .break{
-    background-color: $blue-med;
-    color: $white;
+    background-color: $blue-light;
+    color: $blue-dark;
     font-size: ms(4);
     font-weight: lighter;
     text-align: center;
@@ -283,8 +292,8 @@ a{
     position: relative;
     aside{
         text-transform: uppercase;
-        background-color: $white;
-        color: $blue-med;
+        background-color: $blue-med;
+        color: $blue-dark;
         font-size: 4rem;
         font-size: 4vw;
         font-family: "p22-underground", sans-serif;
