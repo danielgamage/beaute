@@ -26,7 +26,7 @@ body {
 }
 
 html{
-    font-size: 0.6em;
+    font-size: 0.8em;
     @include breakpoint($med){
         font-size: 1.1em;
     }
@@ -98,6 +98,7 @@ header{
     h6{
         white-space: nowrap;
         text-transform: uppercase;
+        transition: margin-left $timing $func;
         &:nth-child(4n){
             background-color: $gray;
             color: $white;
@@ -164,17 +165,21 @@ article{
 .quote{
     cursor: pointer;
     margin: 0 auto;
-    max-width: ms(9);
-    padding: 2rem;
+    max-width: 50rem;
+    padding: 2rem 2rem 2rem 6rem;
     position: relative;
     transition: height $timing $func;
+    @include breakpoint($med){
+        padding: 2rem 6rem;
+    }
     &:first-child:before{
         content: none;
     }
     &:before{
         content: "";
         display: block;
-        border-top: 1px solid #bbb;
+        height: 1px;
+        background: linear-gradient(to right, $white 0%, $gray-light 50%, $white 100%);
         position: relative;
         top: -2rem;
     }
