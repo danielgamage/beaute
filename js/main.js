@@ -28,7 +28,10 @@ $(document).ready(function() {
 			"margin-left": (mX/-1.8)
 		});
 		$( "h3" ).css({
-			"margin-left": (mX/-1.2)
+			"margin-left": (mX/-1.3)
+		});
+		$( "h4" ).css({
+			"margin-left": (mX/-1.1)
 		});
 	});
 });
