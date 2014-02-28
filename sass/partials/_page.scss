@@ -88,19 +88,33 @@ h6{
 }
 
 header{
-    margin-left: -50%;
     font-family: "futura-pt",sans-serif;
-    font-size: 0.8em;
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6{
+    font-size: 1.5em;
+    height: 90vh;
+    position: relative;
+    overflow: hidden;
+    &:after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        box-shadow: 0 -10rem 10rem -5rem $white inset;
+    }
+    .h1,
+    .h2,
+    .h3,
+    .h4,
+    .h5,
+    .h6{
         white-space: nowrap;
         line-height: 1;
         text-transform: uppercase;
-        transition: margin-left $timing $func;
+        display: block;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        backface-visibility: hidden;
         &:nth-child(4n){
             background-color: $gray;
             color: $white;
@@ -109,7 +123,18 @@ header{
         }
     }
 }
-h1{
+
+#mouse{
+    position: absolute;
+    top: -5rem;
+    opacity: 0.2;
+    left: -100%;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.h1{
     font-size: 16em;
     font-weight: 300;
     letter-spacing: -0.05em;
@@ -119,21 +144,21 @@ h1{
         font-size: ms(5);
     }
 }
-h2{
+.h2{
     font-size: 7.7em;
     font-weight: 400;
     .key{
         color: $red;
     }
 }
-h3{
+.h3{
     font-size: 5em;
     font-weight: 500;
     .key{
         color: $red;
     }
 }
-h4{
+.h4{
     font-size: 2.25em;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -142,26 +167,21 @@ h4{
     }
 }
 
-article{
-    padding: 0 2rem 4rem;
-    h2{
-        float: left;
-        padding: 0.5em 0.6em 0.3em;
-        background-color: $red;
-        color: $white;
-        margin: 0 2rem 1rem 0;
-    }
-    footer{
-        .count{
-            font-size: 1.2em;
-            font-family: "futura-pt-condensed", sans-serif;
-            text-transform: uppercase;
-            font-weight: 400;
-            background-color: $blue-med;
-            color: $white;
-            padding: 0.5em 1em 0.5em 0.7em; 
-        }
-    }
+main{
+    margin: 0 auto ms(4);
+    position: relative;
+}
+
+.question{
+    text-align: center;
+    max-width: ms(10);
+    padding: ms(5) 0;
+    font-family: 'futura-pt', sans-serif;
+    font-weight: 700;
+    font-size: ms(3);
+    text-transform: uppercase;
+    color: $gray;
+    position: relative;
 }
 
 .quotes{
@@ -249,12 +269,14 @@ article{
         blockquote[lang=en]{
             opacity: 1 !important;
         }
+        footer{
+            color: lighten($gray, 27%);
+        }
     }
 }
 
 blockquote{
     position: relative;
-    color: $gray-light;
     font-style: italic;
     font-weight: 400;
     font-size: ms(1);

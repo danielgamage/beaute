@@ -18,20 +18,23 @@ $(document).ready(function() {
 		quoteToggle(); // once the quotes are loaded
 	});
 
-	$( "header" ).click(function( event ) {
+	$( window ).mousemove(function( event ) {
 		var mX = event.pageX;
 			mY = event.pageY;
-		$( "h1" ).css({
-			"margin-left": (mX/-2.4)
+		$( "#mouse .h1" ).css({
+			"margin-left": (mX/2.4)
 		});
-		$( "h2" ).css({
-			"margin-left": (mX/-1.8)
+		$( "#mouse .h2" ).css({
+			"margin-left": (mX/1.8)
 		});
-		$( "h3" ).css({
-			"margin-left": (mX/-1.3)
+		$( "#mouse .h3" ).css({
+			"margin-left": (mX/1.3)
 		});
-		$( "h4" ).css({
-			"margin-left": (mX/-1.1)
+		$( "#mouse .h4" ).css({
+			"margin-left": (mX/1.1)
+		});
+		$( "#mouse" ).css({
+			"margin-top": (mY/10)
 		});
 	});
 });
