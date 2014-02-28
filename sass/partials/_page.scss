@@ -115,8 +115,6 @@ header{
         -webkit-backface-visibility: hidden;
         -moz-backface-visibility: hidden;
         backface-visibility: hidden;
-        -webkit-filter: blur(0.5rem);
-        filter: blur(0.5rem);
         &:nth-child(4n){
             background-color: $gray;
             color: $white;

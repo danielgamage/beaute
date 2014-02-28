@@ -22,19 +22,19 @@ $(document).ready(function() {
 		var mX = event.pageX;
 			mY = event.pageY;
 		$( "#mouse .h1" ).css({
-			"margin-left": (mX/15)
+			"margin-left": (mX/20)
 		});
 		$( "#mouse .h2" ).css({
-			"margin-left": (mX/12)
+			"margin-left": (mX/17)
 		});
 		$( "#mouse .h3" ).css({
-			"margin-left": (mX/10)
+			"margin-left": (mX/15)
 		});
 		$( "#mouse .h4" ).css({
-			"margin-left": (mX/7)
+			"margin-left": (mX/10)
 		});
 		$( "#mouse" ).css({
-			"margin-top": (mY/10)
+			"margin-top": (mY/15)
 		});
 	});
 });
