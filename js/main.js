@@ -22,16 +22,16 @@ $(document).ready(function() {
 		var mX = event.pageX;
 			mY = event.pageY;
 		$( "#mouse .h1" ).css({
-			"margin-left": (mX/2.4)
+			"margin-left": (mX/15)
 		});
 		$( "#mouse .h2" ).css({
-			"margin-left": (mX/1.8)
+			"margin-left": (mX/12)
 		});
 		$( "#mouse .h3" ).css({
-			"margin-left": (mX/1.3)
+			"margin-left": (mX/10)
 		});
 		$( "#mouse .h4" ).css({
-			"margin-left": (mX/1.1)
+			"margin-left": (mX/7)
 		});
 		$( "#mouse" ).css({
 			"margin-top": (mY/10)
