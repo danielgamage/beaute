@@ -35,27 +35,32 @@
         </header>
 
         <main id="content">
-            <template id="quote-template">
-                <ul class="quotes">
-                    {{#each quotes}}
-                        <li class="quote">
-                            <blockquote lang="{{lang}}">
-                                {{content.original}}
-                            </blockquote>
-                            <blockquote lang="en">
-                                {{content.translated}}
-                            </blockquote>
-                        </li>
-                    {{/each}}
-                </ul>
-            </template>
+            <div class="description">
+                <p>Well I asked some people. With six degrees of separation, it's not hard to find people from all over the world who all perceive beauty differently.</p>
+            </div>
+            <ul class="quotes">
+                <template id="quote-template">
+                        {{#each quotes}}
+                            <li class="quote" tabindex="0" >
+                                <blockquote lang="{{lang}}">
+                                    {{content.original}}
+                                </blockquote>
+                                <blockquote lang="en">
+                                    {{content.translated}}
+                                </blockquote>
+                            </li>
+                        {{/each}}
+                </template>
+            </ul>
         </main>
 
         <section class="break">
-            what about лепота?
-            <aside>
+            <h2>
+                what about лепота?
+            </h2>
+            <h4>
                 let's talk about beauté
-            </aside>
+            </h4>
         </section>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>

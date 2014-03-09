@@ -92,6 +92,7 @@ header{
     font-family: "futura-pt",sans-serif;
     font-size: 1.5em;
     height: 90vh;
+    min-height: 20rem;
     position: relative;
     overflow: hidden;
     &:after{
@@ -113,9 +114,7 @@ header{
         line-height: 1;
         text-transform: uppercase;
         display: block;
-        -webkit-backface-visibility: hidden;
-        -moz-backface-visibility: hidden;
-        backface-visibility: hidden;
+        @extend %performance;
         &:nth-child(4n){
             background-color: $gray;
             color: $white;
@@ -169,7 +168,7 @@ header{
 }
 
 main{
-    margin: 0 auto ms(4);
+    margin: 0 auto ms(2);
     position: relative;
 }
 
@@ -189,6 +188,18 @@ main{
     }
 }
 
+.description{
+    font-size: ms(1);
+    max-width: 42rem;
+    margin: auto;
+    padding: 2rem;
+    font-weight: bold;
+    margin-top: -100px;
+    @include breakpoint($med){
+        margin-top: -116px;
+    }
+}
+
 .quotes{
     list-style: none;
     margin: 0 auto;
@@ -204,11 +215,10 @@ main{
     padding: 2rem 2rem 2rem 6rem;
     position: relative;
     transition: height $timing $func;
+    overflow: hidden;
+    @extend %performance;
     @include breakpoint($med){
         padding: 2rem 6rem;
-    }
-    &:first-child:before{
-        content: none;
     }
     &:before{
         content: "";
@@ -217,6 +227,30 @@ main{
         background: linear-gradient(to right, $white 0%, $gray-light 50%, $white 100%);
         position: relative;
         top: -2rem;
+        z-index: 5;
+    }
+    &:after{
+        content: "";
+        position: absolute;
+        background-image: linear-gradient(to right, $white, lighten($white, 2%) 50%, $white);
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        transition: opacity $timing-slow;
+    }
+    &:hover,
+    &:focus{
+        outline: none;
+        &:after{
+            opacity: 1;
+        }
+        blockquote:not([lang=en]){
+            &:before{
+                color: darken($gray-light, 10%);
+            }
+        }
     }
     blockquote:not([lang=en]){
         opacity: 1;
@@ -263,7 +297,7 @@ main{
         blockquote:not([lang=en]){
             margin-bottom: 1rem;
             &:before{
-                color: $blue-med;
+                color: $blue-light;
                 text-shadow: 0 0 3rem $blue-light;
             }
             &:after{
@@ -277,6 +311,14 @@ main{
         footer{
             color: lighten($gray, 27%);
         }
+        &:hover,
+        &:focus{
+            blockquote:not([lang=en]){
+                &:before{
+                    color: $blue-med;
+                }
+            }
+        }
     }
 }
 
@@ -287,6 +329,7 @@ blockquote{
     font-size: ms(1);
     line-height: 1.3;
     margin: 0;
+    z-index: 5;
     footer{
         color: $gray-light;
         font-weight: 600;
@@ -326,37 +369,28 @@ a{
 }
 
 .break{
-    background-color: $blue-light;
-    color: $blue-dark;
-    font-weight: lighter;
     text-align: center;
-    padding: ms(3) ms(3) ms(4);
-    position: relative;
-    font-size: 7vw;
     @include breakpoint($med){
         font-size: ms(4);
     }
-    aside{
+    h2{
+        font-size: 8rem;
+        font-size: 8vw;
+        background-color: $blue-light;
+        color: $blue-dark;
+        font-weight: lighter;
+        padding: ms(3) ms(2);
+    }
+    h4{
         text-transform: uppercase;
         background-color: $blue-med;
         color: $blue-dark;
-        font-size: 4rem;
-        font-size: 4vw;
+        font-size: 3rem;
+        font-size: 3vw;
         font-family: "futura-pt", sans-serif;
         line-height: 1;
         font-weight: 600;
         letter-spacing: 0.02em;
-        position: absolute;
-        padding: 0.8rem 1.2rem 0.3rem;
-        bottom: 0;
-        right: 3rem;
-
-        -webkit-transform: scaleX(0.8);
-        transform: scaleX(0.8);
+        padding: ms(1) ms(2);
     } 
 }
-
-
-#main {}
-
-footer {}

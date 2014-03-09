@@ -11,6 +11,11 @@ $(document).ready(function() {
 		quote.click(function(){
 			$(this).toggleClass("translated").children('[lang="en"]').toggle(100);
 		});
+		quote.keypress(function(e){
+			if (e.which == 13) {
+				$(this).toggleClass("translated").children('[lang="en"]').toggle(100);
+			}
+		});
 	}
 
 	$.getJSON( "quotes.json", function( data ) {

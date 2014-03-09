@@ -27,6 +27,7 @@ $list-left-margin: 40px;
 // Transitions
 
 $timing: 0.1s;
+$timing-slow: 0.2s;
 $func: ease-in;
 
 // Type
@@ -49,3 +50,9 @@ $transitions:
 	height $timing ease,
 	-webkit-transform $timing ease,	
 	text-shadow $timing ease;
+
+%performance{
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
